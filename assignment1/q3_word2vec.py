@@ -109,7 +109,7 @@ def negSamplingCostAndGradient(predicted, target, outputVectors, dataset,
     # Probabilities of target and negative samples conditioned on center word
     logits = outputVectors[indices].dot(predicted)
     neg = np.full(logits.shape, -1)
-    neg[target] = 1
+    neg[0] = 1
     probs = sigmoid(logits * neg)
 
     # Cost
